@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration >
+	<settings>
+		<setting name="cacheEnabled" value="true"/>
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	<typeAliases>
+		<!-- 定义类别名 -->
+		<typeAlias type="com.lblin.weixin.domain.UrlPermission" alias="UrlPermission" />
+		<typeAlias type="com.lblin.weixin.domain.security.Authority" alias="Authority" />
+		<typeAlias type="com.lblin.weixin.domain.security.Role" alias="Role" />
+		<typeAlias type="com.lblin.weixin.domain.security.User" alias="User" />
+	</typeAliases>
+	
+	<plugins>
+		<plugin interceptor="com.lblin.weixin.infrastruture.orm.mybatis.MyBatisPagePlugin">
+			<property name="dialect" value="com.lblin.weixin.infrastruture.orm.dialect.impl.MySqlDialect" />
+		</plugin> 
+	</plugins>
+</configuration>
